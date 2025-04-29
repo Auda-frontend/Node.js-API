@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
-import { hashPassword, generateToken, comparePasswords } from "../utils/auth";
-import { env } from "../../config/env";
+import { hashPassword, generateToken, comparePasswords } from "../utils/auth.js";
+import { env } from "../../config/env.js";
 import { sendEmail } from "../../config/mailer";
 
 const prisma = new PrismaClient();

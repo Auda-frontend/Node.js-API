@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { registerUser, loginUser } from "../services/user.service";
+import { registerUser, loginUser } from "../services/user.service.js";
 import { RegisterInput, LoginInput } from "../schemas/user";
 
 export const register = async (req: Request<{}, {}, RegisterInput['body']>, res: Response): Promise<void> => {

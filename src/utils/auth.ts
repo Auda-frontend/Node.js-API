@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-import { env } from '../../config/env';
+import { env } from '../../config/env.js';
 
 interface JwtPayload {
     userId: string;

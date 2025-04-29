@@ -9,7 +9,7 @@ const envSchema = z.object({
     REFRESH_TOKEN_EXPIRES_IN: z.string(),
     SMTP_HOST: z.string(),
     SMTP_PORT: z.string(),
-    SMPT_USERNAME: z.string(),
+    SMTP_USERNAME: z.string(),
     SMTP_PASSWORD: z.string(),
     EMAIL_FROM: z.string(),
 });
