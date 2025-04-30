@@ -2,10 +2,12 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Node.js AP with Auth, Validation, and Prisma",
-  "main": "index.js",  "scripts": {
+  "main": "src/server.js",  
+  "scripts": {
     "dev": "nodemon --watch src --ext ts,json --exec node --loader ts-node/esm src/server.ts",
     "build": "tsc",
     "start": "ts-node src/server.js",
+    "test-email": "nodemon --watch src --ext ts,json --exec node --loader ts-node/esm src/utils/test-email.ts",
     "start:dev": "node --loader tsx src/server.ts",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",

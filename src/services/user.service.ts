@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { hashPassword, generateToken, comparePasswords } from "../utils/auth.js";
 import { env } from "../../config/env.js";
-import { sendEmail } from "../../config/mailer";
+import { sendWelcomeEmail } from "./email/email.service.js";
 
 const prisma = new PrismaClient();
 
@@ -21,6 +21,13 @@ export const registerUser = async (
     });
 
     const token = generateToken(user.id, env.JWT_EXPIRES_IN);
+
+    //Welcome email
+    try {
+        await sendWelcomeEmail(user);
+    } catch (emailError) {
+        console.log('Failed to send welcome email:', emailError);
+    }
 
     return { user, token };
 };
